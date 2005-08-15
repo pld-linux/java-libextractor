@@ -1,0 +1,10 @@
+--- libextractor-java-0.5.1/org/gnunet/libextractor/Makefile.am.orig	2005-07-04 18:07:15.000000000 +0200
++++ libextractor-java-0.5.1/org/gnunet/libextractor/Makefile.am	2005-08-15 13:05:10.586993672 +0200
+@@ -8,5 +8,5 @@
+   Xtract.java
+ 
+ install-exec-local:
+-	mkdir -p $(prefix)/share/java
+-	@JAR@ -cvf $(prefix)/share/java/libextractor.jar *.class
++	mkdir -p $(DESTDIR)$(prefix)/share/java
++	@JAR@ -cvf $(DESTDIR)$(prefix)/share/java/libextractor.jar *.class
