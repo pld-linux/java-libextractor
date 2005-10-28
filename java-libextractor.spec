@@ -5,12 +5,12 @@
 Summary:	Java support for libextractor
 Summary(pl):	Wi±zania Javy dla biblioteki libextractor
 Name:		java-libextractor
-Version:	0.5.1
+Version:	0.5.6
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://gnunet.org/libextractor/download/libextractor-java-%{version}.tar.gz
-# Source0-md5:	208c3126965c0f27293775a140297ef0
+# Source0-md5:	40d2afa043cd6a6822c7840c55479ee5
 Patch0:		libextractor-java-destdir.patch
 URL:		http://gnunet.org/libextractor/
 BuildRequires:	autoconf >= 2.57
