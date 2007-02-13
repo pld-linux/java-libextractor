@@ -3,7 +3,7 @@
 %bcond_with	javac	# use java/javac instead of gij/gcj
 #
 Summary:	Java support for libextractor
-Summary(pl.UTF-8):   Wiązania Javy dla biblioteki libextractor
+Summary(pl.UTF-8):	Wiązania Javy dla biblioteki libextractor
 Name:		java-libextractor
 Version:	0.5.6
 Release:	1
