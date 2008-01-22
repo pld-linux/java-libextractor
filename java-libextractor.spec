@@ -5,12 +5,12 @@
 Summary:	Java support for libextractor
 Summary(pl.UTF-8):	Wiązania Javy dla biblioteki libextractor
 Name:		java-libextractor
-Version:	0.5.6
+Version:	0.5.18
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Libraries
 Source0:	http://gnunet.org/libextractor/download/libextractor-java-%{version}.tar.gz
-# Source0-md5:	40d2afa043cd6a6822c7840c55479ee5
+# Source0-md5:	e04e9984f0fa09188bab31410a6b3106
 Patch0:		libextractor-java-destdir.patch
 URL:		http://gnunet.org/libextractor/
 BuildRequires:	autoconf >= 2.57
@@ -39,10 +39,8 @@ Wiązania Javy dla biblioteki libextractor.
 %{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
-%if %{with javac}
-# Sun java requires . in CLASSPATH for configure test
+# . in CLASSPATH required for configure test
 export CLASSPATH=.
-%endif
 %configure \
 	%{!?with_javac:JAVA=gij}
 
@@ -66,5 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_libdir}/libextractor_java.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libextractor_java.so.0
 %attr(755,root,root) %{_libdir}/libextractor_java.so
 %{_javadir}/libextractor.jar
