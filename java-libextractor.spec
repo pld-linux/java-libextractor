@@ -8,7 +8,7 @@ Name:		java-libextractor
 Version:	0.5.18
 Release:	1
 License:	GPL v2+
-Group:		Libraries
+Group:		Libraries/Java
 Source0:	http://gnunet.org/libextractor/download/libextractor-java-%{version}.tar.gz
 # Source0-md5:	e04e9984f0fa09188bab31410a6b3106
 Patch0:		libextractor-java-destdir.patch
