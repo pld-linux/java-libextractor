@@ -1,25 +1,25 @@
 #
 # Conditional build:
-%bcond_with	javac	# use java/javac instead of gij/gcj
+%bcond_with	gcj	# use gij/gcj instead of java/javac
 #
 Summary:	Java support for libextractor
 Summary(pl.UTF-8):	Wiązania Javy dla biblioteki libextractor
 Name:		java-libextractor
-Version:	0.5.18
+Version:	1.0.0
 Release:	1
-License:	GPL v2+
+License:	GPL v3+
 Group:		Libraries/Java
-Source0:	http://gnunet.org/libextractor/download/libextractor-java-%{version}.tar.gz
-# Source0-md5:	e04e9984f0fa09188bab31410a6b3106
+Source0:	http://ftp.gnu.org/gnu/libextractor/libextractor-java-%{version}.tar.gz
+# Source0-md5:	f35a422e30f9aa0130718bae798e5dfd
 Patch0:		libextractor-java-destdir.patch
-URL:		http://gnunet.org/libextractor/
+URL:		http://www.gnu.org/software/libextractor/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	libextractor-devel >= %{version}
-%if %{with javac}
-BuildRequires:	jdk
-%else
+%if %{with gcj}
 BuildRequires:	gcc-java
+%else
+BuildRequires:	jdk
 %endif
 Requires:	jre
 Requires:	libextractor >= %{version}
@@ -42,7 +42,7 @@ Wiązania Javy dla biblioteki libextractor.
 # . in CLASSPATH required for configure test
 export CLASSPATH=.
 %configure \
-	%{!?with_javac:JAVA=gij}
+	%{?with_gavac:JAVA=gij}
 
 %{__make}
 
@@ -52,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/libextractor_java.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libextractor_java.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
