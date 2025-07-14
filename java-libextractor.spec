@@ -33,7 +33,7 @@ Wiązania Javy dla biblioteki libextractor.
 
 %prep
 %setup -q -n libextractor-java-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__aclocal} -I m4
